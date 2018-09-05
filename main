@@ -11,5 +11,3 @@ if __name__ == "__main__":
     token = Token()
     parser.checkforupdate()
     parser.runparser()
-    #acc_token = token.getacctoken()
-    #token.tradeoff(acc_token)
