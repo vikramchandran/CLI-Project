@@ -13,8 +13,8 @@ class Token(Session):
         logging.info('\n')
 
 
-        client_id = 'etp-admin'
-        client_secret = 'AJ8t1jknpgd2flqM2-JAs3cIi3EV3Y02jk_WPeMl1LfGRSbZyoIiXx50rCPYbfHKTNgXDTOaE0xCpMwZpexbmIY'
+        client_id = 'insert id here'
+        client_secret = 'insert secrete code here'
 
         data = {'grant_type': 'password', 'username': self.username, 'password': self.password}
 
