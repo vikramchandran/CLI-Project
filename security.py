@@ -63,8 +63,8 @@ class Token(Session):
                     "Resource": "*",
                     "Condition": {
                         "NotIpAddress": {
-                            "aws:SourceIp": "72.309.38.2/32"
-                            # "aws:SourceIp": ["72.309.38.2/32", "Insert more IP's here in list format"]
+     
+                            # "aws:SourceIp": [, "Insert more IP's here in list format"]
 
                         }
                     }
