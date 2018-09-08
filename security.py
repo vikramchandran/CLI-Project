@@ -84,8 +84,7 @@ class Token(Session):
         policyrestr = json.dumps(jsonrestr)
         client = boto3.client('sts')
         assumed_role_object = client.assume_role_with_web_identity(
-            # RoleArn="arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/ROLE-NAME",
-            RoleArn="arn:aws:iam::vikramchandran:role/user-pegasus",
+            RoleArn="input role here",
             RoleSessionName="practicesession", WebIdentityToken=token)
 
         accesskey = assumed_role_object['Credentials']['AccessKeyId']
