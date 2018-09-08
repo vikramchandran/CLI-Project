@@ -1,1 +1,0 @@
-from cliparser._version import __version__
