@@ -13,8 +13,8 @@ class Token(Session):
         logging.info('\n')
 
 
-        client_id = 'etp-admin'
-        client_secret = 'AJ8t1jknpgd2flqM2-JAs3cIi3EV3Y02jk_WPeMl1LfGRSbZyoIiXx50rCPYbfHKTNgXDTOaE0xCpMwZpexbmIY'
+        client_id = 'input id'
+        client_secret = 'input passcode here'
 
         data = {'grant_type': 'password', 'username': self.username, 'password': self.password}
 
@@ -63,7 +63,7 @@ class Token(Session):
                     "Resource": "*",
                     "Condition": {
                         "NotIpAddress": {
-                            "aws:SourceIp": "72.309.38.2/32"
+                    
                             # "aws:SourceIp": ["72.309.38.2/32", "Insert more IP's here in list format"]
 
                         }
@@ -85,7 +85,7 @@ class Token(Session):
         client = boto3.client('sts')
         assumed_role_object = client.assume_role_with_web_identity(
             # RoleArn="arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/ROLE-NAME",
-            RoleArn="arn:aws:iam::vikramchandran:role/user-pegasus",
+            RoleArn="input role here",
             RoleSessionName="practicesession", WebIdentityToken=token)
 
         accesskey = assumed_role_object['Credentials']['AccessKeyId']
