@@ -47,7 +47,7 @@ class Communicator(Session):
         s3res = self.s3res
         if which == 'remove':
             filename = '/' + args['rkey']
-            s3res.Object('accolade-platform-ext-dev-partners-577121982548', 'Hashed/' + username + filename).delete()
+            s3res.Object('insert folder name', 'Hashed/' + username + filename).delete()
             print("File was successfuly removed!")
         return filename
 
@@ -57,22 +57,22 @@ class Communicator(Session):
             filename = '/' + args['file'].split('/')[-1]
             if args['replace']:
                 try:
-                    self.s3res.Object('accolade-platform-ext-dev-partners-577121982548', 'Hashed/' + username + filename).load()
-                    self.s3res.Object('accolade-platform-ext-dev-partners-577121982548',
+                    self.s3res.Object('insert folder name', 'Hashed/' + username + filename).load()
+                    self.s3res.Object('insert folder name',
                                  'Hashed/' + username + filename).delete()
                     self.runscan(args['file'])
-                    self.s3client.upload_file(args['file'], 'accolade-platform-ext-dev-partners-577121982548',
+                    self.s3client.upload_file(args['file'], 'insert folder name',
                                          'Hashed/' + username + filename)
                     print("File was successfully replaced!")
                 except botocore.exceptions.ClientError:
-                    # For now pretending that accolade-platform-ext-dev-partners-577121982548 is makeup bucket
+                    # For now pretending that 'insert folder name' is a makeup bucket
                     self.runscan(args['file'])
-                    self.s3client.upload_file(args['file'], 'accolade-platform-ext-dev-partners-577121982548',
+                    self.s3client.upload_file(args['file'], 'insert folder name',
                                          'Hashed/' + username + filename)
                     print("File was successfully replaced!")
             else:
                 self.runscan(args['file'])
-                self.s3client.upload_file(args['file'], 'accolade-platform-ext-dev-partners-577121982548',
+                self.s3client.upload_file(args['file'], 'insert folder name',
                                      'Hashed/' + username + filename)
                 print("File was successfully uploaded!")
         return filename
@@ -83,7 +83,7 @@ class Communicator(Session):
         if which == 'remove':
             filename = self.removefile(which, args, username)
         if which == 'dirupload':
-            filename = self.dirupload(which, args, 'accolade-platform-ext-dev-partners-577121982548',
+            filename = self.dirupload(which, args, 'insert folder name,
                                         'Hashed/' + username)
         if which == 'upload':
             filename = self.upload(which, args, username)
